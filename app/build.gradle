@@ -23,6 +23,7 @@ android {
         }
     }
 
+    //자바 컴파일 옵션
     compileOptions {
         targetCompatibility = "8"
         sourceCompatibility = "8"
