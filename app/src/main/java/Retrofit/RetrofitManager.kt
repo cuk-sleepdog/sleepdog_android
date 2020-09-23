@@ -44,7 +44,7 @@ class RetrofitManager {
     }
 
     //Post할때 액티비티에서 호출해야 하는 함수
-    fun postPetInfoService (petname: String, happy: String, kind: String, gender: String, weight: Int, completion: (Int) -> Unit) {
+    fun postPetInfoService (petname: String, happy: String, kind: String, gender: String, weight: Int, completion: (Int, String) -> Unit) {
 
         val call = petInfo?.postPetInfo(petInfosetting(petname, happy, kind, gender, weight)).let {
             it
@@ -54,12 +54,12 @@ class RetrofitManager {
         call.enqueue(object: retrofit2.Callback<petInfosetting> {
             override fun onFailure(call: Call<petInfosetting>, t: Throwable) {
                 Log.d(ContentValues.TAG, "포스트 실패 /t: $t")
-                completion(0)
+                completion(0, t.toString())
             }
 
             override fun onResponse(call: Call<petInfosetting>, response: Response<petInfosetting>) {
                 Log.d(ContentValues.TAG, "포스트 성공 /response : ${response.body()}")
-                completion(1)
+                completion(1, response.body().toString())
             }
 
         })

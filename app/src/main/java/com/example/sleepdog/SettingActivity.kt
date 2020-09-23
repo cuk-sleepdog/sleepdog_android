@@ -12,8 +12,11 @@ import kotlinx.android.synthetic.main.activity_setting.*
 
 class SettingActivity : AppCompatActivity() {
     val TAG : String = "MainActivity"
-    var Gender : String? = null
-    var Kind : String = ""
+    lateinit var name : String
+    lateinit var happy : String
+    var gender : String? = null
+    var kind : String = ""
+    var weight : Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,21 +32,21 @@ class SettingActivity : AppCompatActivity() {
         btn_female.setOnClickListener {
             btn_female.setSelected(true)
             btn_male.setSelected(false)
-            Gender = "여"
+            gender = "여"
         }
         btn_male.setOnClickListener {
             btn_male.setSelected(true)
             btn_female.setSelected(false)
-            Gender = "남"
+            gender = "남"
         }
 
         dog_kind.onItemSelectedListener = object: AdapterView.OnItemSelectedListener {
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                 when(p2) {
-                    0-> {Kind = ""}//견종 어레이에서 디폴트값 선택되어있는경우 아무것도 하지 않는다
+                    0-> {kind = ""}//견종 어레이에서 디폴트값 선택되어있는경우 아무것도 하지 않는다
 
                     else ->{ //그외경우에 어떤게 선택되어졌는지 String으로 불러와서 Kind에 저장
-                        Kind = dog_kind.getSelectedItem().toString()
+                        kind = dog_kind.getSelectedItem().toString()
                     }
                 }
             }
@@ -53,7 +56,16 @@ class SettingActivity : AppCompatActivity() {
 
         btn_save.setOnClickListener {
 
-            RetrofitManager.instance.searchPetname("멍이", completion = {
+            name = dog_name.toString()
+            happy = et_year.toString()+"-"+et_month.toString()+"-"+et_date.toString()
+            weight = 50
+
+
+            val term = gender.let {
+                it
+            }?:""
+
+            RetrofitManager.instance.postPetInfoService(petname = "시현", happy = "2020-04-03", kind = "마티즈", gender = "여아", weight = 50, completion = {
                     responseState, responseBody ->
                 when(responseState) {
                     1->{

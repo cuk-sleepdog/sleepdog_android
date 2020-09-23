@@ -67,6 +67,7 @@
             android:weightSum="10">
 
             <TextView
+                android:id="@+id/dog_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
@@ -161,6 +162,7 @@
             android:weightSum="10">
 
             <EditText
+                android:id="@+id/et_year"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="textMultiLine|textNoSuggestions"
@@ -180,6 +182,7 @@
                 android:text="년"/>
 
             <EditText
+                android:id="@+id/et_month"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="textMultiLine|textNoSuggestions"
@@ -209,6 +212,7 @@
                 android:padding="5dp"/>
 
             <TextView
+                android:id="@+id/et_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"

@@ -16,20 +16,20 @@ data class petInfosetting (
 
 object RetrofitClient {
     //retrofitClient 는 null값은 못가지고 추후 초기화
-    private lateinit var petinforetrofit: Retrofit
+    private var petinforetrofit: Retrofit? = null
     //private lateinit var petinforetrofit: Retrofit
 
     //PetInfoService 인터페이스를 상속받아서 초기화를 시켜준다.
-    fun getService(baseUrl : String) : Retrofit {
+    fun getService(baseUrl : String) : Retrofit? {
         Log.d(ContentValues.TAG, "레트로핏 클라이언트 - 겟 서비스 called")
 
         //널값을 가질경우 생성
-
-        petinforetrofit = Retrofit.Builder()
-            .baseUrl(baseUrl)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-
+        if (petinforetrofit == null) {
+            petinforetrofit = Retrofit.Builder()
+                .baseUrl(baseUrl)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+        }
 
         return petinforetrofit
     }
