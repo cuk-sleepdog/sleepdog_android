@@ -43,8 +43,6 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-
-
     fun onSleepConfirmButtonClicked(view: View){
         val intent = Intent(this,HealthActivity::class.java)
         startActivity(intent)
