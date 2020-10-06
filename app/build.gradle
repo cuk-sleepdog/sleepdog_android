@@ -58,4 +58,7 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     compile 'sun.bob:mcalendarview:1.0.0'
+    //카카오 로그인
+    implementation 'com.kakao.sdk:usermgmt:1.16.0'
+
 }
