@@ -22,14 +22,34 @@
       <option name="url" value="https://dl.google.com/dl/android/maven2/" />
     </remote-repository>
     <remote-repository>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 1c9bed2f06305724bce4ecac2f43d2e284bf21e2
       <option name="id" value="MavenRepo" />
       <option name="name" value="MavenRepo" />
       <option name="url" value="https://repo.maven.apache.org/maven2/" />
     </remote-repository>
     <remote-repository>
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 87ff3743efda7f1bfdb6db74ac51bf2ef66b3ec4
+>>>>>>> 1c9bed2f06305724bce4ecac2f43d2e284bf21e2
       <option name="id" value="maven" />
       <option name="name" value="maven" />
       <option name="url" value="http://devrepo.kakao.com:8088/nexus/content/groups/public/" />
     </remote-repository>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    <remote-repository>
+      <option name="id" value="maven" />
+      <option name="name" value="maven" />
+      <option name="url" value="https://devrepo.kakao.com/nexus/content/groups/public/" />
+    </remote-repository>
+=======
+>>>>>>> 87ff3743efda7f1bfdb6db74ac51bf2ef66b3ec4
+>>>>>>> 1c9bed2f06305724bce4ecac2f43d2e284bf21e2
   </component>
 </project>
