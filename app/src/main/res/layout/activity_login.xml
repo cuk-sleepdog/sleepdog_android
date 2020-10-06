@@ -12,8 +12,25 @@
         android:id="@+id/imageView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_footprint2" />
+        android:src="@drawable/ic_footprint2"
+        android:layout_marginBottom="30dp"/>
 
+    <com.kakao.usermgmt.LoginButton
+        android:id="@+id/btn_kakao_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp" />
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="로그아웃"/>
+
+<<<<<<< HEAD
     <com.kakao.usermgmt.LoginButton
         android:id="@+id/btn_kakao_login"
         android:layout_width="wrap_content"
