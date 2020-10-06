@@ -14,13 +14,13 @@
         android:layout_height="wrap_content"
         android:src="@drawable/ic_footprint2" />
 
-    <Button
-        android:id="@+id/btn_test"
+    <com.kakao.usermgmt.LoginButton
+        android:id="@+id/btn_kakao_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:onClick="onIntoMainButtonClicked"
-        android:text="카카오톡으로 로그인" />
+        android:layout_marginTop="20dp"/>
+
+
+
 
 </LinearLayout>
