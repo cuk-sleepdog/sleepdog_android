@@ -48,7 +48,7 @@
                 android:layout_marginStart="87dp"
                 android:layout_marginTop="33dp"
                 android:layout_marginBottom="188dp"
-                android:text="수면"
+                android:text="체온"
                 android:textSize="@dimen/health_textsize"
                 app:layout_constraintBottom_toTopOf="@+id/textView21"
                 app:layout_constraintEnd_toStartOf="@+id/textView27"
@@ -64,32 +64,22 @@
                 android:layout_marginStart="176dp"
                 android:layout_marginTop="264dp"
                 android:layout_marginEnd="176dp"
-                android:text="주별 평균 수면시간"
+                android:text="오늘 잠든 시간"
                 android:textSize="@dimen/health_textsize"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.464"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/textView22"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="176dp"
-                android:layout_marginEnd="176dp"
-                android:layout_marginBottom="52dp"
-                android:text="잠이 부족해요"
-                android:textSize="@dimen/health_textsize"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
 
             <LinearLayout
                 android:id="@+id/linearLayout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="166dp"
+                android:layout_height="33dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="78dp"
                 android:orientation="horizontal"
-                app:layout_constraintBottom_toTopOf="@+id/textView22"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView21">
@@ -132,29 +122,29 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="33dp"
-                android:layout_marginEnd="96dp"
+                android:layout_marginEnd="108dp"
                 android:layout_marginBottom="204dp"
-                android:text="깊은수면"
+                android:text="심박수"
                 android:textSize="@dimen/health_textsize"
                 app:layout_constraintBottom_toTopOf="@+id/textView21"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
 
             <TextView
                 android:id="@+id/textView28"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="284dp"
+                android:layout_marginStart="262dp"
                 android:layout_marginTop="208dp"
-                android:layout_marginEnd="5dp"
+                android:layout_marginEnd="16dp"
                 android:layout_marginBottom="264dp"
                 android:text="TextView"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toEndOf="@+id/textView29"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.507" />
+                app:layout_constraintVertical_bias="0.505" />
 
             <TextView
                 android:id="@+id/textView29"
@@ -167,7 +157,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.51" />
+                app:layout_constraintVertical_bias="0.505" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </FrameLayout>
