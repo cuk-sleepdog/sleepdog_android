@@ -1,13 +1,10 @@
 package com.example.sleepdog
 
-import Retrofit.RetrofitManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_setting.*
 
 class SettingActivity : AppCompatActivity() {
@@ -65,13 +62,13 @@ class SettingActivity : AppCompatActivity() {
                 it
             }?:""
 
-            RetrofitManager.instance.postPetInfoService(petname = "시현", happy = "2020-04-03", kind = "마티즈", gender = "여아", weight = 50, completion = {
-                    responseState, responseBody ->
-                when(responseState) {
-                    1->{
-                        Log.d(TAG, "api 겟 호출 성공 $responseBody" )}
-                }
-            })
+//            RetrofitManager.instance.postPetInfoService(petname = "시현", happy = "2020-04-03", kind = "마티즈", gender = "여아", weight = 50, completion = {
+//                    responseState, responseBody ->
+//                when(responseState) {
+//                    1->{
+//                        Log.d(TAG, "api 겟 호출 성공 $responseBody" )}
+//                }
+//            })
 
         }
 
