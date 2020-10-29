@@ -12,3 +12,6 @@
 /captures
 .externalNativeBuild
 .cxx
+/app/build.gradle
+build.gradle
+/app/src/main/AndroidManifest.xml
