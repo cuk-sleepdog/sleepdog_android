@@ -6,7 +6,13 @@ import android.util.Log
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.lang.reflect.GenericDeclaration
-
+data class petInfosetting (
+    val Petname : String,
+    val Happy : String,
+    val Kind : String,
+    val Gender : String,
+    val Weight : Int
+)
 //싱글턴-메모리를 하나만 사용
 object RetrofitClient {
     //레트로핏 클라이언트 선언
