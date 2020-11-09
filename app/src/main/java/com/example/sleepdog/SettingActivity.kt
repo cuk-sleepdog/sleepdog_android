@@ -76,7 +76,6 @@ class SettingActivity : AppCompatActivity() {
             //trim을 이용해서 좌우공백이 있을시 제거해준다
             dogname = dog_name.text.toString().trim()
             username = user.text.toString().trim()
-            weight = Integer.parseInt(dog_weight.text.toString())
 
             //입력해야 할 부분이 하나라도 비었을 경우
             if (username.equals("") || dogname.equals("") || et_year.text.toString().trim()
@@ -109,6 +108,7 @@ class SettingActivity : AppCompatActivity() {
 
             //api에 포스트 이후 sharedpreference에 저장
             saveData()
+            finish()
         }
     }
     fun openGallery() {
