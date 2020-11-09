@@ -55,7 +55,6 @@ class MainActivity : AppCompatActivity() {
 
         loaddata()
         Log.d(TAG, "onCreate: {$realPath}")
-        dogImage.setImageURI(Uri.parse(realPath))
 
         //블루투스 어뎁터를 초기화
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter()
@@ -114,11 +113,18 @@ class MainActivity : AppCompatActivity() {
         val pref = getSharedPreferences("info", Context.MODE_PRIVATE)
 
         realPath = pref.getString("realPath", "")
+        //가져온 Uri를 이용해서 이미지뷰 채우기
+        dogImage.setImageURI(Uri.parse(realPath))
         tv_user.setText(pref.getString("userName", ""))
         tv_dog.setText(pref.getString("dogName", ""))
         tv_gender.setText(pref.getString("dogGender", ""))
         tv_kind.setText(pref.getString("dogKind", ""))
         tv_happy.setText(pref.getString("dogHappy", ""))
         tv_weight.setText(pref.getInt("dogWeight", 0).toString())
+    }
+    override fun onResume() {
+        super.onResume()
+        Log.d(TAG, "Resume / 확인용 로그")
+        loaddata()
     }
 }

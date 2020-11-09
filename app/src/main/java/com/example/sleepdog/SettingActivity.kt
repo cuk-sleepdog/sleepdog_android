@@ -24,6 +24,7 @@ class SettingActivity : AppCompatActivity() {
     private val RESQUE_CODE = 0; //갤러리에 진입할때 정상 진입을 알려주기 위한 임의로 정한 변수
 
     //모든 변수 선언하면서 공백으로 초기화
+    var realPath : String? = null
     var username : String = ""
     var dogname : String = ""
     var happy : String =""
@@ -153,6 +154,11 @@ class SettingActivity : AppCompatActivity() {
         if (resultCode == Activity.RESULT_OK && requestCode == RESQUE_CODE) {
             var currentUri: Uri? = data?.data
             profile.setImageURI(currentUri)
+            currentUri?.let {
+                it
+            }?: return
+
+            realPath = currentUri.toString()
 
             //이미지를 최종 로드하면 플러스모양 추가버튼을 안보이게 설정
             btn_add.visibility = View.INVISIBLE
@@ -164,6 +170,7 @@ class SettingActivity : AppCompatActivity() {
         val pref = getSharedPreferences("info", Context.MODE_PRIVATE)
         val edit = pref.edit() //수정모드
         //1번째 인자가 key값, 두번째가 저장되는 값
+        edit.putString("realPath", realPath)
         edit.putString("userName", username)
         edit.putString("dogName", dogname)
         edit.putString("dogHappy", happy)
