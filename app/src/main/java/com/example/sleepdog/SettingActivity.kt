@@ -105,11 +105,10 @@ class SettingActivity : AppCompatActivity() {
                 weight = Integer.parseInt(dog_weight.text.toString())
 
                 RetrofitManager.instance.postToDo(dogname, happy, kind, gender, weight)
+                //api에 포스트 이후 sharedpreference에 저장
+                saveData()
+                finish()
             }
-
-            //api에 포스트 이후 sharedpreference에 저장
-            saveData()
-            finish()
         }
     }
     fun openGallery() {
