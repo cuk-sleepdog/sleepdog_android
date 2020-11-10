@@ -25,7 +25,6 @@ class SettingActivity : AppCompatActivity() {
 
     //모든 변수 선언하면서 공백으로 초기화
     var realPath : String? = null
-    var username : String = ""
     var dogname : String = ""
     var happy : String =""
     var kind : String = ""
@@ -76,10 +75,9 @@ class SettingActivity : AppCompatActivity() {
 
             //trim을 이용해서 좌우공백이 있을시 제거해준다
             dogname = dog_name.text.toString().trim()
-            username = user.text.toString().trim()
 
             //입력해야 할 부분이 하나라도 비었을 경우
-            if (username.equals("") || dogname.equals("") || et_year.text.toString().trim()
+            if (dogname.equals("") || et_year.text.toString().trim()
                     .equals("") || et_month.text.toString().trim()
                     .equals("") || et_date.text.toString().trim()
                     .equals("") || kind.equals("") || gender == null || dog_weight.text.toString()
@@ -170,7 +168,6 @@ class SettingActivity : AppCompatActivity() {
         val edit = pref.edit() //수정모드
         //1번째 인자가 key값, 두번째가 저장되는 값
         edit.putString("realPath", realPath)
-        edit.putString("userName", username)
         edit.putString("dogName", dogname)
         edit.putString("dogHappy", happy)
         edit.putString("dogKind", kind)

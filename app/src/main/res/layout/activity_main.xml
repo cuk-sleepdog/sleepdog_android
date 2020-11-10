@@ -76,6 +76,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/main_petinfo_margin"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_user"
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="TextView"
+                        android:textSize="@dimen/main_petinfo_fontSize" />
+
+                </LinearLayout>
 
                 <ImageView
                     android:id="@+id/dogImage"
@@ -90,29 +106,6 @@
                     android:gravity="center_vertical"
                     android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/main_petinfo_margin"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/user_name"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:text="사용자"
-                            android:textSize="@dimen/main_petinfo_fontSize" />
-
-                        <TextView
-                            android:id="@+id/tv_user"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="TextView"
-                            android:textSize="@dimen/main_petinfo_fontSize" />
-                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"

@@ -50,32 +50,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:weightSum="10">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:layout_weight="2"
-                    android:text="사용자"
-                    android:textSize="25dp"
-                    android:paddingLeft="10dp"/>
-                <EditText
-                    android:id="@+id/user"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="textMultiLine|textNoSuggestions"
-                    android:layout_marginTop="15dp"
-                    android:background="@drawable/rounded_edittext"
-                    android:textSize="20dp"
-                    android:layout_weight="8"
-                    android:hint="내용을 입력하세요."
-                    android:padding="5dp"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="10">
 
                 <TextView
                     android:layout_width="wrap_content"

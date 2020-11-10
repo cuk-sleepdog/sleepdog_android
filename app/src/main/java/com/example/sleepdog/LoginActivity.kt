@@ -72,7 +72,7 @@ class LoginActivity : AppCompatActivity() {
                     val intent = Intent(applicationContext, MainActivity::class.java)
                     Log.i("Log", "아이디 : ${result!!.id}")
                     Toast.makeText(applicationContext, "로그인 성공", Toast.LENGTH_SHORT).show()
-                    //intent.putExtra("name", result.nickname)
+                    intent.putExtra("name", result.nickname)
                     //intent.putExtra("profile", result.profileImagePath)
                     startActivity(intent)
                     finish()

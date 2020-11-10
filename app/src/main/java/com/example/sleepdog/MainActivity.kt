@@ -53,6 +53,10 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        //로그인액티비티에서 넘어온 이름 값이 있는지 확인
+        if(intent.hasExtra("name")) {
+            tv_user.setText(intent.getStringExtra("name") + " 님 환영합니다.")
+        }
         loaddata()
         Log.d(TAG, "onCreate: {$realPath}")
 
@@ -115,7 +119,6 @@ class MainActivity : AppCompatActivity() {
         realPath = pref.getString("realPath", "")
         //가져온 Uri를 이용해서 이미지뷰 채우기
         dogImage.setImageURI(Uri.parse(realPath))
-        tv_user.setText(pref.getString("userName", ""))
         tv_dog.setText(pref.getString("dogName", ""))
         tv_gender.setText(pref.getString("dogGender", ""))
         tv_kind.setText(pref.getString("dogKind", ""))
