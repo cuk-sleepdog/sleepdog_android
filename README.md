@@ -1,6 +1,6 @@
-#2020/11/11작성
+# 2020/11/11작성
 
-#dev 브랜치에서 **ignore** 하고 있는 파일
+# dev 브랜치에서 **ignore** 하고 있는 파일
 
 * /build.gradle
 
@@ -14,9 +14,9 @@
 
 
 
-#dev브랜치를 정상 사용하기 위해서 추가해주어야 할 것
+# dev 브랜치 사용시 추가해주어야 할 것
 
-##/app/build.gradle 파일
+## /app/build.gradle 파일
 
 ```
 android {
@@ -44,7 +44,7 @@ dependencies {
 
 
 
-##/app/src/main/AndroidManifest.xml
+## /app/src/main/AndroidManifest.xml
 
 ```
 <uses-permission android:name="android.permission.INTERNET"/>
@@ -61,7 +61,7 @@ dependencies {
 </application>
 ```
 
-##/app/src/main/res/values/string.xml
+## /app/src/main/res/values/string.xml
 
 ```
 <resources>
@@ -70,7 +70,7 @@ dependencies {
 </resources>
 ```
 
-ex)네이티브 앱키 12345678의 경우
+ex)네이티브 앱키 **12345678**의 경우
 
 ```
 <string name="KAKAO_APP_KEY">12345678</string>
