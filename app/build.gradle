@@ -57,4 +57,5 @@ dependencies {
     implementation 'com.kakao.sdk:usermgmt:1.16.0'
 
 
+
 }

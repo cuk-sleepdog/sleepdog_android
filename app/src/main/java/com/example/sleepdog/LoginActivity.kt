@@ -1,7 +1,6 @@
 package com.example.sleepdog
 
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -18,6 +17,8 @@ import com.kakao.util.exception.KakaoException
 
 
 class LoginActivity : AppCompatActivity() {
+
+    var TAG: String = "로그"
     private var sessionCallback: SessionCallback? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -69,12 +70,14 @@ class LoginActivity : AppCompatActivity() {
                 }
 
                 override fun onSuccess(result: MeV2Response) {
+                    Log.e(TAG, "아이디 : ${result!!.id}")
+                    Log.e(TAG, "닉네임 : ${result!!.nickname}")
                     val intent = Intent(applicationContext, MainActivity::class.java)
-                    Log.i("Log", "아이디 : ${result!!.id}")
+                    intent.putExtra("name", result.nickname) //유저 이름(String)
+                    startActivity(intent);
                     Toast.makeText(applicationContext, "로그인 성공", Toast.LENGTH_SHORT).show()
                     //intent.putExtra("name", result.nickname)
                     //intent.putExtra("profile", result.profileImagePath)
-                    startActivity(intent)
                     finish()
                 }
             })

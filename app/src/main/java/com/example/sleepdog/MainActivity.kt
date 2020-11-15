@@ -2,7 +2,7 @@ package com.example.sleepdog
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
+import android.os.Handler
 import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
@@ -17,15 +17,15 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import java.security.cert.LDAPCertStoreParameters
+import kotlin.concurrent.timer
 
 
 class MainActivity : AppCompatActivity() {
     private val BASEURL = "http://sleepdog.mintpass.kr:3000/"
-    private val temperature: TextView? = null
-    private val heart_rate: TextView? = null
+
 
     var TAG: String = "로그"
+    private val handler = Handler()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,6 +33,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         var temperature = findViewById(R.id.temperature) as TextView
+        var heart_rate = findViewById(R.id.heart_rate) as TextView
+
+        val intent = intent
+        var strNickname = intent.getStringExtra("name")
+        tvNickname.setText(strNickname);
+
 
         var retrofit = Retrofit.Builder()
             .baseUrl(BASEURL)
@@ -45,26 +51,35 @@ class MainActivity : AppCompatActivity() {
         var call = apiService.getHealth()
 
 
-        call.enqueue(object: Callback<List<Health>> {
-            override fun onResponse(call:Call<List<Health>>, response:Response<List<Health>>) {
+        call.enqueue(object : Callback<List<Health>> {
+            override fun onResponse(call: Call<List<Health>>, response: Response<List<Health>>) {
                 println("성공")
                 val MainHealth = response?.body()
-                for (health in MainHealth!!)
-                {
 
-                    val content = "DATE:" + health.getBpm() + "\n"
-                    val content1 = "Time:" + health.getTemp() + "\n"
+                // var length = MainHealth?.size
+                // Log.d(TAG, length.toString())
 
-                    Log.d(TAG,content)
-                    temperature.setText(content)
+                for (health in MainHealth!!) {
 
-//                    var temp = health.getTemp()
-//                    var  bpm = health.getBpm()
-//                    temperature?.setText(temp)
-//                    heart_rate?.setText(bpm)
+
+//                    Log.d(TAG, content1);
+//                    Log.d(TAG, content);
+                    val timer = timer(period = 5000) {
+
+                        runOnUiThread {
+                            var content = health.getBpm()
+                            var content1 = health.getTemp()
+                            temperature.setText(content1)
+                            heart_rate.setText(content) }
+                    }
+
                 }
+
+                //타이머로 1분?간격으로 text값 바꾸기
+
             }
-            override fun onFailure(call:Call<List<Health>>, t:Throwable) {
+
+            override fun onFailure(call: Call<List<Health>>, t: Throwable) {
                 println("실패")
             }
         })
@@ -101,4 +116,15 @@ class MainActivity : AppCompatActivity() {
         val intent2 = Intent(this, SettingActivity::class.java)
         startActivity(intent2)
     }
+
+    private class splashhandler : Runnable {
+        override fun run() {
+
+        }
+    }
+
+//    fun timer(content1: String, content: String){
+//        temperature.setText(content1)
+//        heart_rate.setText(content)
+//    }
 }
