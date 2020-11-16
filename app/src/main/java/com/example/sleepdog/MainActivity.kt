@@ -7,7 +7,7 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.SettingsSlicesContract
+import android.os.Handler
 import android.util.Log
 import android.view.View
 import android.widget.Toast
@@ -18,7 +18,11 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
+    private val BASEURL = "http://sleepdog.mintpass.kr:3000/"
+
     var TAG: String = "로그"
+    private val handler = Handler()
+
     //블루투스 권한을 물어볼때 구별할 수 있는 값
     private var REQUEST_CODE_ENABLE_BT: Int = 1
 
