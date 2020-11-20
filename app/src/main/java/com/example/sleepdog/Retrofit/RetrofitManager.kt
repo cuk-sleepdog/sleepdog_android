@@ -1,7 +1,7 @@
 package com.example.sleepdog.Retrofit
 
+import android.content.ContentValues.TAG
 import android.util.Log
-import androidx.constraintlayout.widget.Constraints.TAG
 import com.example.sleepdog.utils.API
 import com.google.gson.JsonElement
 import retrofit2.Call
@@ -16,22 +16,38 @@ class RetrofitManager {
     private val iRetrofit : IRetrofit? = RetrofitClient.getClient(API.BASE_URL)?.create(IRetrofit::class.java)
 
     //api호출
-    fun testApi(testPetName:String?,completion: (String) -> Unit){
-        val call = iRetrofit?.testApi().let{
+    fun getToDo() {
+        val call = iRetrofit?.getPetInfo().let{
             it
         }?: return
 
-        call.enqueue(object : retrofit2.Callback<JsonElement> {
-            override fun onResponse(call: Call<JsonElement>, response: Response<JsonElement>) {
-                TODO("Not yet implemented")
-                Log.d(TAG, "RetrofitManager-onResponse() called/response : ${response.raw()}")
-            }
-
+        call.enqueue(object : retrofit2.Callback<JsonElement>{
             override fun onFailure(call: Call<JsonElement>, t: Throwable) {
-                TODO("Not yet implemented")
-                Log.d(TAG, "RetrofitManager-onFailure() called/t:$t")
+                Log.d(TAG, "RetrofitManager -getToDo - onFailure() called / :t: ${t}")
             }
 
+            override fun onResponse(call: Call<JsonElement>, response: Response<JsonElement>) {
+                Log.d(TAG, "RetrofitManager - getToDo - onResponse() called / response : ${response} ")
+            }
+        })
+    }
+
+    fun postToDo(pn : String, h : String, k : String, g : String, w : Int) {
+        val call = iRetrofit?.postPetInfo(pn, h, k, g, w).let {
+            it
+        } ?: return
+
+        call.enqueue(object : retrofit2.Callback<petInfosetting> {
+            override fun onFailure(call: Call<petInfosetting>, t: Throwable) {
+                Log.d(TAG, "RetrofitManager - postToDo - onFailure() called / :t: ${t} ")
+            }
+
+            override fun onResponse(
+                call: Call<petInfosetting>,
+                response: Response<petInfosetting>
+            ) {
+                Log.d(TAG, "RetrofitManager - postToDo - onResponse() called / response : ${response.body()} ")
+            }
         })
     }
 }

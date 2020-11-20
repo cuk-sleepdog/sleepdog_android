@@ -1,10 +1,16 @@
 package com.example.sleepdog
 
+import android.app.Activity
+import android.bluetooth.BluetoothAdapter
+import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
+import android.util.Log
 import android.view.View
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.sleepdog.Retrofit.ApiService
@@ -25,7 +31,14 @@ class MainActivity : AppCompatActivity() {
 
 
     var TAG: String = "로그"
-    private val handler = Handler()
+
+    private var REQUEST_CODE_ENABLE_BT: Int = 1
+
+    //블루투스 어댑터
+    lateinit var mBluetoothAdapter: BluetoothAdapter
+
+    //절대경로
+    var realPath : String? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -104,6 +117,26 @@ class MainActivity : AppCompatActivity() {
             dialog.show()
 
         }
+        loaddata()
+
+        //블루투스 어뎁터를 초기화
+        mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter()
+
+        //블루투스 스위치 구현
+        switch_bluetooth.setOnCheckedChangeListener { compoundButton, onSwitch ->
+            checkBluetooth()
+
+            if (onSwitch) {
+                if (mBluetoothAdapter.isEnabled) {
+                } else {
+                    val intent = Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE)
+                    startActivityForResult(intent, REQUEST_CODE_ENABLE_BT)
+                }
+            } else {
+                Toast.makeText(this, "블루투스 사용을 권장합니다.", Toast.LENGTH_SHORT).show()
+                mBluetoothAdapter.disable()
+            }
+        }
 
     }
 
@@ -117,14 +150,46 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent2)
     }
 
-    private class splashhandler : Runnable {
-        override fun run() {
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        when (requestCode) {
+            REQUEST_CODE_ENABLE_BT ->
+                if (resultCode == Activity.RESULT_OK) {
 
+                } else if (resultCode == Activity.RESULT_CANCELED) {
+                    Toast.makeText(this, "블루투스 사용을 권장합니다.", Toast.LENGTH_SHORT).show()
+                    switch_bluetooth.setChecked(false)
+                }
+        }
+        super.onActivityResult(requestCode, resultCode, data)
+    }
+
+    fun checkBluetooth() {
+        //블루투스기능을 지원가능한 기기인지 확인
+        if (mBluetoothAdapter == null) {
+            Toast.makeText(this, "블루투스를 지원하지 않는 기기입니다.", Toast.LENGTH_SHORT).show()
+            finish()
+        } else {
+            Toast.makeText(this, "블루투스를 사용할 수 있습니다.", Toast.LENGTH_SHORT).show()
         }
     }
 
-//    fun timer(content1: String, content: String){
-//        temperature.setText(content1)
-//        heart_rate.setText(content)
-//    }
+    private fun loaddata() {
+        val pref = getSharedPreferences("info", Context.MODE_PRIVATE)
+
+        realPath = pref.getString("realPath", "")
+        //가져온 Uri를 이용해서 이미지뷰 채우기
+        dogImage.setImageURI(Uri.parse(realPath))
+        tv_dog.setText(pref.getString("dogName", ""))
+        tv_gender.setText(pref.getString("dogGender", ""))
+        tv_kind.setText(pref.getString("dogKind", ""))
+        tv_happy.setText(pref.getString("dogHappy", ""))
+        tv_weight.setText(pref.getInt("dogWeight", 0).toString())
+    }
+    override fun onResume() {
+        super.onResume()
+        Log.d(TAG, "Resume / 확인용 로그")
+        loaddata()
+    }
+
+
 }
