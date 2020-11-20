@@ -2,8 +2,25 @@
 <resources>
     <string-array name="breeds">
         <item>견종 선택</item>
-        <item>골든리트리버</item>
-        <item>마티즈</item>
-        <item>기타</item>
+        <item>진돗개</item>
+        <item>삽살개</item>
+        <item>말티즈</item>
+        <item>푸들</item>
+        <item>빠삐용</item>
+        <item>비숑프리제</item>
+        <item>프렌치 불독</item>
+        <item>비글</item>
+        <item>골든 리트리버</item>
+        <item>콜리</item>
+        <item>요크셔 테리어</item>
+        <item>슈나우저</item>
+        <item>셰퍼드</item>
+        <item>포메라니안</item>
+        <item>닥스훈트</item>
+        <item>치와와</item>
+        <item>아메리칸 코카스파니엘</item>
+        <item>보스턴 테리어</item>
+        <item>알래스칸 맬러뮤트</item>
+        <item>시베리아 허스키</item>
     </string-array>
 </resources>
