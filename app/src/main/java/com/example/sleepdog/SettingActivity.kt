@@ -49,12 +49,12 @@ class SettingActivity : AppCompatActivity() {
         btn_female.setOnClickListener {
             btn_female.setSelected(true)
             btn_male.setSelected(false)
-            gender = "G"
+            gender = "암컷"
         }
         btn_male.setOnClickListener {
             btn_male.setSelected(true)
             btn_female.setSelected(false)
-            gender = "M"
+            gender = "수컷"
         }
 
         dog_kind.onItemSelectedListener = object: AdapterView.OnItemSelectedListener {

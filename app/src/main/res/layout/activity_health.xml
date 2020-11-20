@@ -29,7 +29,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginRight="10dp"
-                app:srcCompat="@drawable/ic_footprint" />
+                app:srcCompat="@drawable/ic_footprint2" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -75,7 +75,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginRight="10dp"
-                app:srcCompat="@drawable/ic_footprint" />
+                app:srcCompat="@drawable/ic_footprint2" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -111,7 +111,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginRight="10dp"
-                app:srcCompat="@drawable/ic_footprint" />
+                app:srcCompat="@drawable/ic_footprint2" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -225,7 +225,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginRight="10dp"
-                app:srcCompat="@drawable/ic_footprint" />
+                app:srcCompat="@drawable/ic_footprint2" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -244,18 +244,19 @@
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:text="real1"
+                android:textColor="#ed7d31"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textView15"
-                android:layout_gravity="center"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ºC"/>
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:text="ºC"
+                android:textSize="20dp"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
@@ -270,7 +271,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginRight="10dp"
-                app:srcCompat="@drawable/ic_footprint" />
+                app:srcCompat="@drawable/ic_footprint2" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -289,6 +290,7 @@
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:text="real2"
+                android:textColor="#ed7d31"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
@@ -316,7 +318,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginRight="10dp"
-                app:srcCompat="@drawable/ic_footprint" />
+                app:srcCompat="@drawable/ic_footprint2" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -335,6 +337,7 @@
                 android:layout_gravity="center"
                 android:layout_marginRight="5dp"
                 android:text="12"
+                android:textColor="#ed7d31"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 

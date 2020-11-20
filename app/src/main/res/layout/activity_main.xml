@@ -75,7 +75,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="안녕하세요"
-                    android:textColor="#8b00ff"
+                    android:textColor="#ed7d31"
                     android:textStyle="bold"
                     android:layout_marginRight="5dp"/>
 
@@ -91,7 +91,7 @@
                     android:id="@+id/textView5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="#8b00ff"
+                    android:textColor="#ed7d31"
                     android:textStyle="bold"
                     android:text="님" />
 
@@ -136,6 +136,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:textColor="#ed7d31"
                             android:gravity="center"
                             android:text="반려견"
                             android:textSize="@dimen/main_petinfo_fontSize" />
@@ -161,6 +162,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
+                            android:textColor="#ed7d31"
                             android:text="성별"
                             android:textSize="@dimen/main_petinfo_fontSize" />
 
@@ -185,6 +187,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
+                            android:textColor="#ed7d31"
                             android:text="견종"
                             android:textSize="@dimen/main_petinfo_fontSize" />
 
@@ -210,6 +213,7 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:text="생년월일"
+                            android:textColor="#ed7d31"
                             android:textSize="@dimen/main_petinfo_fontSize" />
 
                         <TextView
@@ -233,6 +237,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
+                            android:textColor="#ed7d31"
                             android:text="몸무게"
                             android:textSize="@dimen/main_petinfo_fontSize" />
 
@@ -302,6 +307,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="38"
+                        android:textColor="#ed7d31"
                         android:textSize="@dimen/main_button_Temperature" />
 
                     <TextView
@@ -346,6 +352,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="110"
+                    android:textColor="#ed7d31"
                     android:gravity="center"
                     android:textSize="@dimen/main_button_Heart_rate"
                     android:layout_marginBottom="15dp"/>
